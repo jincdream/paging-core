@@ -19,7 +19,7 @@ Name |
 
 ▸ (`page`: number, `params?`: P): Promise\<D>
 
-*Defined in [index.ts:1](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L1)*
+*Defined in [index.ts:1](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L1)*
 
 #### Parameters:
 

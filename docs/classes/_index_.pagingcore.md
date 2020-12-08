@@ -27,6 +27,7 @@ Name |
 * [initParams](_index_.pagingcore.md#initparams)
 * [pageNumber](_index_.pagingcore.md#pagenumber)
 * [params](_index_.pagingcore.md#params)
+* [useCache](_index_.pagingcore.md#usecache)
 
 ### Methods
 
@@ -45,15 +46,15 @@ Name |
 
 ### constructor
 
-\+ **new PagingCore**(`initParams?`: PARAMS): [PagingCore](_index_.pagingcore.md)
+\+ **new PagingCore**(`config?`: { initParams?: PARAMS ; useCache?: undefined \| false \| true  }): [PagingCore](_index_.pagingcore.md)
 
-*Defined in [index.ts:4](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L4)*
+*Defined in [index.ts:4](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L4)*
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`initParams?` | PARAMS |
+Name | Type | Default value |
+------ | ------ | ------ |
+`config` | { initParams?: PARAMS ; useCache?: undefined \| false \| true  } | {} |
 
 **Returns:** [PagingCore](_index_.pagingcore.md)
 
@@ -63,7 +64,7 @@ Name | Type |
 
 • `Private` **cacheData**: Array\<DATA \| void> = []
 
-*Defined in [index.ts:16](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L16)*
+*Defined in [index.ts:23](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L23)*
 
 ___
 
@@ -71,7 +72,7 @@ ___
 
 • `Private` **initParams**: PARAMS \| undefined
 
-*Defined in [index.ts:18](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L18)*
+*Defined in [index.ts:25](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L25)*
 
 ___
 
@@ -79,7 +80,7 @@ ___
 
 • `Private` **pageNumber**: number = 1
 
-*Defined in [index.ts:19](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L19)*
+*Defined in [index.ts:26](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L26)*
 
 ___
 
@@ -87,7 +88,15 @@ ___
 
 • `Private` **params**: PARAMS \| undefined
 
-*Defined in [index.ts:17](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L17)*
+*Defined in [index.ts:24](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L24)*
+
+___
+
+### useCache
+
+• `Private` **useCache**: boolean \| void
+
+*Defined in [index.ts:22](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L22)*
 
 ## Methods
 
@@ -95,7 +104,7 @@ ___
 
 ▸ **getPageData**(`page`: number): DATA \| void
 
-*Defined in [index.ts:66](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L66)*
+*Defined in [index.ts:75](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L75)*
 
 #### Parameters:
 
@@ -111,7 +120,7 @@ ___
 
 ▸ **last**(): void
 
-*Defined in [index.ts:54](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L54)*
+*Defined in [index.ts:63](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L63)*
 
 **Returns:** void
 
@@ -121,7 +130,7 @@ ___
 
 ▸ **load**(): Promise\<[DATA \| void, Error \| void]>
 
-*Defined in [index.ts:29](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L29)*
+*Defined in [index.ts:36](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L36)*
 
 **Returns:** Promise\<[DATA \| void, Error \| void]>
 
@@ -131,7 +140,7 @@ ___
 
 ▸ `Private`**loader**(): Promise\<DATA>
 
-*Defined in [index.ts:20](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L20)*
+*Defined in [index.ts:27](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L27)*
 
 **Returns:** Promise\<DATA>
 
@@ -141,7 +150,7 @@ ___
 
 ▸ **next**(): void
 
-*Defined in [index.ts:51](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L51)*
+*Defined in [index.ts:60](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L60)*
 
 **Returns:** void
 
@@ -151,7 +160,7 @@ ___
 
 ▸ **registered**(`fn`: [ILoader](../interfaces/_index_.iloader.md)\<PARAMS, DATA>): void
 
-*Defined in [index.ts:26](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L26)*
+*Defined in [index.ts:33](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L33)*
 
 #### Parameters:
 
@@ -167,7 +176,7 @@ ___
 
 ▸ **reset**(): void
 
-*Defined in [index.ts:60](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L60)*
+*Defined in [index.ts:69](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L69)*
 
 **Returns:** void
 
@@ -177,7 +186,7 @@ ___
 
 ▸ **setPage**(`number`: number): void
 
-*Defined in [index.ts:39](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L39)*
+*Defined in [index.ts:48](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L48)*
 
 #### Parameters:
 
@@ -193,7 +202,7 @@ ___
 
 ▸ **setParam**(`key`: keyof PARAMS, `value`: PARAMS[keyof PARAMS]): void
 
-*Defined in [index.ts:42](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L42)*
+*Defined in [index.ts:51](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L51)*
 
 #### Parameters:
 
@@ -210,7 +219,7 @@ ___
 
 ▸ **setParams**(`params`: PARAMS): void
 
-*Defined in [index.ts:57](https://github.com/jincdream/paging-core/blob/a3de0d6/src/index.ts#L57)*
+*Defined in [index.ts:66](https://github.com/jincdream/paging-core/blob/0a17133/src/index.ts#L66)*
 
 #### Parameters:
 

@@ -20,7 +20,7 @@
 
 ▸ `Const`**loader**(`number`: number, `params`: undefined \| Partial\<{ name: string  }>): Promise\<{ list: string[] = ['1', '2', '3']; number: number ; params: undefined \| Partial\<{ name: string  }>  }>
 
-*Defined in [__tests__/index.spec.ts:7](https://github.com/jincdream/paging-core/blob/a3de0d6/src/__tests__/index.spec.ts#L7)*
+*Defined in [__tests__/index.spec.ts:7](https://github.com/jincdream/paging-core/blob/0a17133/src/__tests__/index.spec.ts#L7)*
 
 #### Parameters:
 
