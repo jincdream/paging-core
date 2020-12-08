@@ -42,7 +42,9 @@ npm install paging-core
     }
   }
   const paging = new PagingCore<Partial<{ name: string }>, IData>({
-    name: "jinc",
+    initParams: {
+      name: "jinc",
+    }
   })
   // 注册加载函数
   paging.registered(loader)

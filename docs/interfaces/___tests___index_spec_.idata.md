@@ -22,7 +22,7 @@
 
 •  **list**: Array\<string>
 
-*Defined in [__tests__/index.spec.ts:3](https://github.com/jincdream/paging-core/blob/0a17133/src/__tests__/index.spec.ts#L3)*
+*Defined in [__tests__/index.spec.ts:3](https://github.com/jincdream/paging-core/blob/17657e7/src/__tests__/index.spec.ts#L3)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **number**: number
 
-*Defined in [__tests__/index.spec.ts:4](https://github.com/jincdream/paging-core/blob/0a17133/src/__tests__/index.spec.ts#L4)*
+*Defined in [__tests__/index.spec.ts:4](https://github.com/jincdream/paging-core/blob/17657e7/src/__tests__/index.spec.ts#L4)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • `Optional` **params**: Partial\<{ name: string  }>
 
-*Defined in [__tests__/index.spec.ts:5](https://github.com/jincdream/paging-core/blob/0a17133/src/__tests__/index.spec.ts#L5)*
+*Defined in [__tests__/index.spec.ts:5](https://github.com/jincdream/paging-core/blob/17657e7/src/__tests__/index.spec.ts#L5)*

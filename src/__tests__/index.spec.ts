@@ -31,6 +31,17 @@ describe(`PagingCore`, () => {
     })
     expect(err).toBe(undefined)
   })
+  it(`[NEW]:empty config`, async () => {
+    const paging = new PagingCore<Partial<{ name: string }>, IData>()
+    paging.registered(loader)
+    let [data, err]: [IData | void, Error | void] = await paging.load()
+    expect(data).toEqual({
+      list: ['1', '2', '3'],
+      number: 1,
+      params: undefined,
+    })
+    expect(err).toBe(undefined)
+  })
   it(`[API]:setParam`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
       initParams: {
