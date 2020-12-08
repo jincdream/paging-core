@@ -14,11 +14,13 @@ const loader: ILoader<Partial<{ name: string }>, IData> = async (
     params,
   }
 }
-describe(`Greeter`, () => {
+describe(`PagingCore`, () => {
   beforeEach(() => {})
   it(`[NEW]:normal`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     let [data, err]: [IData | void, Error | void] = await paging.load()
@@ -31,7 +33,9 @@ describe(`Greeter`, () => {
   })
   it(`[API]:setParam`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     paging.setParam('name', 'jinci')
@@ -45,7 +49,9 @@ describe(`Greeter`, () => {
   })
   it(`[API]:setPage`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     paging.setPage(3)
@@ -59,7 +65,9 @@ describe(`Greeter`, () => {
   })
   it(`[API]:setParams`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     paging.setParams({
@@ -75,7 +83,9 @@ describe(`Greeter`, () => {
   })
   it(`[API]:next`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     paging.next()
@@ -89,7 +99,9 @@ describe(`Greeter`, () => {
   })
   it(`[API]:last`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     paging.next()
@@ -104,7 +116,9 @@ describe(`Greeter`, () => {
   })
   it(`[API]:reset`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     paging.setParam('name', 'jinci')
@@ -119,7 +133,10 @@ describe(`Greeter`, () => {
   })
   it(`[API]:getPageData`, async () => {
     const paging = new PagingCore<Partial<{ name: string }>, IData>({
-      name: 'jinc',
+      useCache: true,
+      initParams: {
+        name: 'jinc',
+      },
     })
     paging.registered(loader)
     await paging.load()

@@ -2,17 +2,24 @@ export interface ILoader<P, D> {
   (page: number, params?: P): Promise<D>
 }
 export default class PagingCore<PARAMS, DATA> {
-  constructor(initParams?: PARAMS) {
-    if (!initParams) return
+  constructor(
+    config: {
+      useCache?: boolean
+      initParams?: PARAMS
+    } = {}
+  ) {
+    this.useCache = config.useCache
+    if (!config.initParams) return
     try {
-      this.initParams = JSON.parse(JSON.stringify(initParams))
-      this.params = JSON.parse(JSON.stringify(initParams))
+      this.initParams = JSON.parse(JSON.stringify(config.initParams))
+      this.params = JSON.parse(JSON.stringify(config.initParams))
     } catch (error) {
       console.warn(
         `[PagingCore warn]: 'InitParams' copy error! Check your 'InitParams' is a Object type!`
       )
     }
   }
+  private useCache: boolean | void
   private cacheData: Array<DATA | void> = []
   private params: PARAMS | undefined
   private initParams: PARAMS | undefined
@@ -33,7 +40,9 @@ export default class PagingCore<PARAMS, DATA> {
     } catch (error) {
       err = error
     }
-    this.cacheData[this.pageNumber] = data
+    if (this.useCache) {
+      this.cacheData[this.pageNumber] = data
+    }
     return [data, err]
   }
   setPage(number: number) {
