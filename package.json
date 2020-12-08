@@ -1,13 +1,13 @@
 {
-  "name": "",
+  "name": "PagingCore",
   "version": "0.0.1",
-  "description": "",
+  "description": "Paging Core",
   "keywords": [
-    "mt2",
-    "ali",
-    "lomt",
-    "config",
-    "config loader"
+    "Paging",
+    "js",
+    "core",
+    "PagingCore",
+    "pagingCore"
   ],
   "main": "./bundles/index.umd.js",
   "module": "./esm5/index.js",
